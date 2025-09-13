@@ -4,9 +4,9 @@ Fullstack Inventory Management App | .NET Microservices + React + SQL
 
 
 # Sistema de Gestión de Inventario
-Evaluación técnica para el puesto de Desarrollador Full Stack en Netby.
+Evaluación técnica para el puesto de Desarrollador Full Stack.
 
-Esta aplicación implementa una arquitectura de microservicios en .NET Core para el backend yAngular, React para el frontend, usando SQL Server como base de datos.
+Esta aplicación implementa una arquitectura de microservicios en .NET Core para el backend y Angular, React para el frontend, usando SQL Server como base de datos.
 Permite la gestión de productos y transacciones de compras y ventas, con validación de stock, paginación, filtros dinámicos y una interfaz web moderna y responsiva.
 
 
@@ -23,6 +23,15 @@ Este proyecto incluye dos implementaciones de frontend que consumen los mismos m
 | Angular   | `/frontend/inventory-angular`   | `ng serve`    |
 
 
+## 💻 Backends Disponibles
+
+| Microservicio       | Carpeta                  | Comando de ejecución | Descripción |
+|--------------------|-------------------------|--------------------|-------------|
+| Productos.API       | `/backend/Productos.API`       | `dotnet run`        | CRUD de productos y gestión de stock |
+| Transacciones.API   | `/backend/Transacciones.API`   | `dotnet run`        | Registro de compras/ventas, validación y ajuste de stock |
+| Shared              | `/backend/Shared`              | N/A                 | Clases comunes y DTOs compartidos |
+
+
 
 
 ## ⚙️ Configuración de la Base de Datos
@@ -36,6 +45,13 @@ Este proyecto incluye dos implementaciones de frontend que consumen los mismos m
 }
 ```
 
+### Migraciones y Base de Datos
+
+1. Crear la base de datos:
+   ```sql
+   CREATE DATABASE InventarioDB;
+   CREATE DATABASE ProductosDb;
+   
 ---
 
 ## 💻 Ejecución del Backend
