@@ -2,42 +2,39 @@
 Fullstack Inventory Management App | .NET Microservices + React + SQL
 ---
 
+# Inventory Management System
+Technical assessment for the Full Stack Developer position.
 
-# Sistema de Gestión de Inventario
-Evaluación técnica para el puesto de Desarrollador Full Stack.
-
-Esta aplicación implementa una arquitectura de microservicios en .NET Core para el backend y Angular, React para el frontend, usando SQL Server como base de datos.
-Permite la gestión de productos y transacciones de compras y ventas, con validación de stock, paginación, filtros dinámicos y una interfaz web moderna y responsiva.
-
+This application implements a microservices architecture in .NET Core for the backend and Angular, React for the frontend, using SQL Server as the database.
+It allows the management of products and purchase and sales transactions, with stock validation, pagination, dynamic filters, and a modern, responsive web interface.
 
 ---
 
+## 💻 Available Frontends
 
-## 💻 Frontends Disponibles
+This project includes two frontend implementations that consume the same microservices:
 
-Este proyecto incluye dos implementaciones de frontend que consumen los mismos microservicios:
-
-| Framework | Carpeta             | Comando de ejecución       |
-|-----------|----------------------|------------------------------|
+| Framework | Folder             | Run command       |
+|-----------|----------------------|------------------|
 | React     | `/frontend/inventory-react`     | `npm run dev` |
 | Angular   | `/frontend/inventory-angular`   | `ng serve`    |
 
 
-## 💻 Backends Disponibles
+## 💻 Available Backends
 
-| Microservicio       | Carpeta                  | Comando de ejecución | Descripción |
-|--------------------|-------------------------|--------------------|-------------|
-| Productos.API       | `/backend/Productos.API`       | `dotnet run`        | CRUD de productos y gestión de stock |
-| Transacciones.API   | `/backend/Transacciones.API`   | `dotnet run`        | Registro de compras/ventas, validación y ajuste de stock |
-| Shared              | `/backend/Shared`              | N/A                 | Clases comunes y DTOs compartidos |
-
-
+| Microservice       | Folder                  | Run command | Description |
+|--------------------|-------------------------|-------------|-------------|
+| Productos.API      | `/backend/Productos.API`       | `dotnet run`        | Product CRUD and stock management |
+| Transacciones.API  | `/backend/Transacciones.API`   | `dotnet run`        | Record of purchases/sales, stock validation and adjustment |
+| Shared             | `/backend/Shared`              | N/A                 | Shared common classes and DTOs |
 
 
-## ⚙️ Configuración de la Base de Datos
 
-1. Crear dos bases de datos vacía en SQL Server para inventario y producto ejemplo: InventarioDB, ProductosDb
-2. Configurar la cadena de conexión en los archivos `appsettings.json` de cada microservicio, por ejemplo:
+
+## ⚙️ Database Configuration
+
+1. Create two empty databases in SQL Server for inventory and products, for example: InventarioDB, ProductosDb
+2. Configure the connection string in the `appsettings.json` files of each microservice, for example:
 
 ```json
 "ConnectionStrings": {
@@ -45,23 +42,23 @@ Este proyecto incluye dos implementaciones de frontend que consumen los mismos m
 }
 ```
 
-### Migraciones y Base de Datos
+### Migrations and Database
 
-1. Crear la base de datos:
+1. Create the database:
    ```sql
    CREATE DATABASE InventarioDB;
    CREATE DATABASE ProductosDb;
-   
+   ```
 ---
 
-## 💻 Ejecución del Backend
+## 💻 Running the Backend
 
-Cada microservicio se encuentra en la carpeta /backend/:
+Each microservice is located in the /backend/ folder:
 
-/backend/Productos.API
+/backend/Productos.API  
 /backend/Transacciones.API
 
-Pasos para ejecutar:
+Steps to run:
 
 ```bash
 cd backend/Productos.API
@@ -71,7 +68,6 @@ dotnet run
 ```
 
 ```bash
-Copiar código
 cd backend/Transacciones.API
 dotnet restore
 dotnet ef database update
